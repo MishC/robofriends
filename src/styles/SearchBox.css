@@ -1,3 +1,15 @@
+@import url("http://fonts.cdnfonts.com/css/sega-logo-font");
+body {
+  background: radial-gradient(
+    592px at 50.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254) 78.6%
+  );
+}
+h1,
+h3 {
+  color: #142d4c;
+}
 .card {
   width: 18rem;
   border: 2px solid black;
@@ -14,4 +26,8 @@
 .form-control {
   display: inline;
   max-width: 20%;
+}
+h1 {
+  font-family: "SEGA LOGO FONT", sans-serif;
+  word-spacing: 4mm;
 }

@@ -33,7 +33,7 @@ export default function SearchBox() {
 
   return (
     <div className="SearchBox pt-5">
-      <h1 className="mb-2 mt-4">{"Create your own Roboteam".toUpperCase()}</h1>
+      <h1 className="mb-2 mt-4">{"your Roboteam".toUpperCase()}</h1>
       <form onSubmit={search} className="form-group m-5">
         <div className="d-inline">
           <input
@@ -48,7 +48,7 @@ export default function SearchBox() {
           <input
             type="submit"
             value="Search"
-            className="btn btn-success btn-rounded "
+            className="btn btn-primary btn-rounded "
             onClick={() => {
               setName(keyword);
             }}
@@ -64,7 +64,16 @@ export default function SearchBox() {
               className="image"
             />
             <div className="card-body">
-              <h3 className="card-text">{robot.name}</h3>
+              <h3 className="card-text">{firstLetterUp(robot.name)}</h3>
+              <button
+                className="btn  btn-primary btn-rounded  p-2 px-4"
+                onClick={() => {
+                  fetch(`${newLocal}/${robot.id}`, { method: "DELETE" });
+                }}
+              >
+                {" "}
+                Delete{" "}
+              </button>
             </div>
           </div>
         );
