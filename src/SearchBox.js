@@ -37,9 +37,9 @@ export default function SearchBox() {
       <form onSubmit={search} className="form-group m-5">
         <div className="d-inline">
           <input
-            type="text"
+            type="search"
             placeholder="Write a name"
-            className="form-control d-inline shadow-sm  w-20 p-1"
+            className="form-control d-inline shadow-sm  p-1"
             autoFocus="on"
             autoComplete="off"
             onChange={handleSearchWord}
