@@ -1,8 +1,12 @@
 {
   "robots": [
     {
-      "name": "You",
+      "name": "suny",
       "id": 1
+    },
+    {
+      "name": "Runny",
+      "id": 2
     }
   ]
 }

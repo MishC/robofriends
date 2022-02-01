@@ -6,23 +6,23 @@ export default function SearchBox() {
   let [name, setName] = useState("");
   let [robots, setRobots] = useState([]);
 
-  function handleSearchWord(event) {
-    setKeyword(event.target.value);
-  }
   const newLocal = "http://localhost:5000/robots";
   function firstLetterUp(word) {
     let word1 = word.charAt(0).toUpperCase() + word.slice(1);
     return word1;
   }
 
-  function search(event) {
+  const handleSearchWord = (event) => {
+    setKeyword(event.target.value);
+  };
+  const search = (event) => {
     event.preventDefault();
     fetch(newLocal, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),
     });
-  }
+  };
   useEffect(() => {
     fetch(newLocal)
       .then((res) => res.json())
