@@ -1,24 +1,20 @@
 {
   "robots": [
     {
-      "name": "suny",
+      "name": "morten",
       "id": 1
     },
     {
-      "name": "Runny",
+      "name": "Misha",
       "id": 2
     },
     {
-      "name": "ddjjd",
-      "id": 3
+      "name": "javis",
+      "id": 6
     },
     {
-      "name": "Ronny",
-      "id": 4
-    },
-    {
-      "name": "Porto",
-      "id": 5
+      "name": "troody",
+      "id": 7
     }
   ]
 }

@@ -39,7 +39,7 @@ export default function SearchBox() {
           <input
             type="search"
             placeholder="Write a name"
-            className="form-control d-inline shadow-sm  p-1"
+            className="form-control d-inline shadow-sm "
             autoFocus="on"
             autoComplete="off"
             onChange={handleSearchWord}
@@ -66,7 +66,7 @@ export default function SearchBox() {
             <div className="card-body">
               <h3 className="card-text">{firstLetterUp(robot.name)}</h3>
               <button
-                className="btn  btn-primary btn-rounded  p-2 px-4"
+                className="btn  btn-primary btn-rounded  py-2 px-4"
                 onClick={() => {
                   fetch(`${newLocal}/${robot.id}`, { method: "DELETE" });
                 }}
