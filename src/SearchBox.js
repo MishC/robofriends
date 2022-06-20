@@ -5,6 +5,7 @@ export default function SearchBox() {
   let [keyword, setKeyword] = useState("");
   let [name, setName] = useState("");
   let [robots, setRobots] = useState([]);
+  let [response, setResponse] = useState();
 
   const newLocal = "http://localhost:5000/robots";
   function firstLetterUp(word) {
@@ -15,22 +16,28 @@ export default function SearchBox() {
   const handleSearchWord = (event) => {
     setKeyword(event.target.value);
   };
-  const search = (event) => {
-    event.preventDefault();
-    fetch(newLocal, {
+  async function search() {
+    const connect = await fetch(newLocal, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),
     });
-  };
+    setResponse(await connect.json());
+  }
+  async function deleteRobot(robot) {
+    const deleteThis = await fetch(`${newLocal}/${robot.id}`, {
+      method: "DELETE",
+    });
+
+    setResponse(await deleteThis.json());
+  }
   useEffect(() => {
     fetch(newLocal)
       .then((res) => res.json())
       .then((data) => {
         setRobots(data);
       });
-  }, [search]);
-
+  }, [response]);
   return (
     <div className="SearchBox pt-5">
       <h1 className="mb-2 mt-4">{"your Roboteam".toUpperCase()}</h1>
@@ -68,7 +75,7 @@ export default function SearchBox() {
               <button
                 className="btn  btn-primary btn-rounded  py-2 px-4"
                 onClick={() => {
-                  fetch(`${newLocal}/${robot.id}`, { method: "DELETE" });
+                  deleteRobot(robot);
                 }}
               >
                 {" "}

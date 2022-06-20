@@ -1,20 +1,12 @@
 {
   "robots": [
     {
-      "name": "morten",
-      "id": 1
-    },
-    {
-      "name": "Misha",
+      "name": "lukrecia",
       "id": 2
     },
     {
-      "name": "javis",
-      "id": 6
-    },
-    {
-      "name": "troody",
-      "id": 7
+      "name": "Nina",
+      "id": 3
     }
   ]
 }
