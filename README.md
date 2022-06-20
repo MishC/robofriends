@@ -8,4 +8,3 @@ ii) Second run npm start
 
 Inspired by ZTM Web Development course project Robofriends
 
-:D :D
