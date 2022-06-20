@@ -16,7 +16,8 @@ export default function SearchBox() {
   const handleSearchWord = (event) => {
     setKeyword(event.target.value);
   };
-  async function search() {
+  async function search(event) {
+    event.preventDefault();
     const connect = await fetch(newLocal, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
